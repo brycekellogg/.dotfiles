@@ -8,6 +8,7 @@ endif
 " Choose Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree',
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'micha/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
@@ -15,8 +16,10 @@ call plug#end()
 " Close vim if NERDTree is only thing left
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Auto start NERDTree
+autocmd VimEnter * NERDTree
 
-set mouse=
+set mouse=a
 
 " Visual Changes
 set nowrap
@@ -37,7 +40,9 @@ nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 
-" Remap window splitting
+" Split below and right
+set splitbelow
+set splitright
 
 " Unmap annoying q issues
 nnoremap q: <nop>
