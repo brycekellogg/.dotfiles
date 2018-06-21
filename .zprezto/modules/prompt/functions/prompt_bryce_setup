@@ -1,0 +1,37 @@
+#
+# A single line theme with Git information on the left and Ruby on the right.
+#
+# Authors:
+#   Bryce Kellogg
+#
+
+function prompt_bryce_precmd {
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+}
+
+function prompt_bryce_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook to set up prompt parameters before each command.
+  add-zsh-hook precmd prompt_bryce_precmd
+
+  # Set git-info parameters.
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:branch' format "%F{green}±%f%F{yellow}%b%f"
+  zstyle ':prezto:module:git:info:dirty' format "%F{yellow}⚡%f"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '%b%D'
+
+  # Define prompts.
+  PROMPT="%F{green}%n@%m%f %1~ "'$git_info[prompt]'"%F{red}%(!.#.») %f"
+  RPROMPT="%(?..%F{red}%? ↵%f"
+}
+
+prompt_bryce_setup "$@"
