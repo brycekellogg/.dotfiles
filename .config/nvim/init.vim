@@ -17,7 +17,7 @@ call plug#end()
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Auto start NERDTree
-autocmd VimEnter * NERDTree
+autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 
 set mouse=a
 
