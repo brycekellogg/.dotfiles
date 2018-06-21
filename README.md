@@ -10,3 +10,6 @@ https://github.com/sorin-ionescu/prezto
 
 ### Install Customized dotfiles
 cp -asi --remove-destination `pwd`/.^git ~
+
+### Install Universal ctags ###
+https://github.com/universal-ctags/ctags
