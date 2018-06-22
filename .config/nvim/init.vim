@@ -19,6 +19,10 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Auto start NERDTree
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 
+" Have NERDTree ignore some files
+let NERDTreeIgnore=['\.o$', '\~$', '\.git']
+
+
 set mouse=a
 
 " Visual Changes
