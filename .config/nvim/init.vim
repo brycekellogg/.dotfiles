@@ -11,6 +11,8 @@ Plug 'scrooloose/nerdtree',
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'micha/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Close vim if NERDTree is only thing left
@@ -22,6 +24,14 @@ autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 " Have NERDTree ignore some files
 let NERDTreeIgnore=['\.o$', '\~$', '\.git']
 
+" Vim/Tmux Integration Mappings
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
+"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 set mouse=a
 
