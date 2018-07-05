@@ -22,7 +22,8 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 
 " Have NERDTree ignore some files
-let NERDTreeIgnore=['\.o$', '\.obj$', '\~$', '\.git']
+let NERDTreeIgnore=['\.o$', '\~$', '\.git']
+let NERDTreeMinimalUI = 1
 
 " Vim/Tmux Integration Mappings
 let g:tmux_navigator_no_mappings = 1
