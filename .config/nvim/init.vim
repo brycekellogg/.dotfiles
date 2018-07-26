@@ -8,18 +8,25 @@ endif
 " Choose Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree',
+Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'micha/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Close vim if NERDTree is only thing left
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Auto start NERDTree
-autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p | endif
+
+" Keyboard shortcut for NERDTree
+nnoremap <Leader>f :NERDTreeToggle<Enter>
 
 " Have NERDTree ignore some files
 let NERDTreeIgnore=['\.o$', '\~$', '\.git']
@@ -27,12 +34,10 @@ let NERDTreeMinimalUI = 1
 
 " Vim/Tmux Integration Mappings
 let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
-nnoremap <silent> <M-Down> :TmuxNavigateDown<cr>
-nnoremap <silent> <M-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-Left>  :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-Down>  :TmuxNavigateDown<cr>
+nnoremap <silent> <M-Up>    :TmuxNavigateUp<cr>
 nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
-"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 set mouse=a
 
