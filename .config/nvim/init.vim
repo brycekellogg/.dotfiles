@@ -13,7 +13,22 @@ Plug 'micha/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 call plug#end()
+
+cnoreabbrev ack Ack!
+
+" Set ag as seach program
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Highligh search term in ack.vim
+let g:ackhighlight = 1
+
+" Fix windows with NERDTree and ack.vim
+let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 
 " Close vim if NERDTree is only thing left
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -22,17 +37,15 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 
 " Have NERDTree ignore some files
-let NERDTreeIgnore=['\.o$', '\~$', '\.git']
+let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags']
 let NERDTreeMinimalUI = 1
 
 " Vim/Tmux Integration Mappings
 let g:tmux_navigator_no_mappings = 1
-
 nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
 nnoremap <silent> <M-Down> :TmuxNavigateDown<cr>
 nnoremap <silent> <M-Up> :TmuxNavigateUp<cr>
 nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
-"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 set mouse=a
 
@@ -48,12 +61,6 @@ set shiftwidth=4
 
 " Set clipboard to system clipboard
 set clipboard+=unnamedplus
-
-" Remap window movement to ctrl+arrows
-nmap <silent> <C-Up> :wincmd k<CR>
-nmap <silent> <C-Down> :wincmd j<CR>
-nmap <silent> <C-Left> :wincmd h<CR>
-nmap <silent> <C-Right> :wincmd l<CR>
 
 " Split below and right
 set splitbelow
