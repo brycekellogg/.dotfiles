@@ -18,7 +18,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" GitGutter Config
+set updatetime=100
+
 
 cnoreabbrev ack Ack!
 
@@ -46,6 +51,7 @@ nnoremap <Leader>f :NERDTreeToggle<Enter>
 " Have NERDTree ignore some files
 let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags']
 let NERDTreeMinimalUI = 1
+let g:NERDTreeStatusline = " "
 
 " Vim/Tmux Integration Mappings
 let g:tmux_navigator_no_mappings = 1
