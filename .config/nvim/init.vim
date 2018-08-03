@@ -46,7 +46,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p | endif
 
 " Keyboard shortcut for NERDTree
-nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
 
 " Have NERDTree ignore some files
 let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags']
@@ -59,6 +59,9 @@ nnoremap <silent> <M-Left>  :TmuxNavigateLeft<cr>
 nnoremap <silent> <M-Down>  :TmuxNavigateDown<cr>
 nnoremap <silent> <M-Up>    :TmuxNavigateUp<cr>
 nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
+
+" Resize splits automatically
+autocmd VimResized * wincmd =
 
 set mouse=a
 
