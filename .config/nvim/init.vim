@@ -49,7 +49,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p 
 nnoremap <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
 
 " Have NERDTree ignore some files
-let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags']
+let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc']
 let NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = " "
 
