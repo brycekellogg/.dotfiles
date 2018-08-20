@@ -7,18 +7,17 @@ endif
 
 " Choose Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'scrooloose/nerdtree',
-Plug 'scrooloose/nerdcommenter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'micha/vim-colors-solarized'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'scrooloose/nerdtree',         {'on': 'NERDTreeToggle'}
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
-Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " GitGutter Config
@@ -42,8 +41,8 @@ let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Auto start NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p | endif
 
 " Keyboard shortcut for NERDTree
 nnoremap <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
@@ -55,6 +54,7 @@ let g:NERDTreeStatusline = " "
 
 " Vim/Tmux Integration Mappings
 let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_disable_when_zoomed = 1
 nnoremap <silent> <M-Left>  :TmuxNavigateLeft<cr>
 nnoremap <silent> <M-Down>  :TmuxNavigateDown<cr>
 nnoremap <silent> <M-Up>    :TmuxNavigateUp<cr>
