@@ -15,13 +15,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'lervag/vimtex'
 call plug#end()
 
 " GitGutter Config
-set updatetime=100
+"set updatetime=100
 
 
 cnoreabbrev ack Ack!
@@ -46,9 +44,13 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Keyboard shortcut for NERDTree
 nnoremap <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
+nnoremap - <NOP>
+nnoremap \| <NOP>
+let NERDTreeMapOpenSplit='-'
+let NERDTreeMapOpenVSplit='<Bar>'
 
 " Have NERDTree ignore some files
-let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc']
+let NERDTreeIgnore=['\.o$', '\~$', '\.git', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc', '\.obj']
 let NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = " "
 
