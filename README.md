@@ -8,8 +8,11 @@ zsh
 ### Install Prezto ###
 https://github.com/sorin-ionescu/prezto
 
-### Install Customized dotfiles
-cp -asi --remove-destination `pwd`/.^git ~
+### dircolors ###
+Create a symlink to the dircolors database
+```zsh
+ln -s ~/.dotfiles/.dir_colors ~/.dir_colors
+```
 
 ### Install Universal ctags ###
 https://github.com/universal-ctags/ctags
