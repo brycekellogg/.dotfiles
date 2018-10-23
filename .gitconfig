@@ -4,6 +4,9 @@
 [push]
     default = simple
 
+[core]
+    excludesfile = ~/.dotfiles/.gitignore
+
 [merge]
     tool = vimdiff
 [mergetool]

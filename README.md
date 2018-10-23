@@ -20,5 +20,5 @@ create a separate $HOME/.gitconfig that contains the following:
 
 ```INI
 [include]
-    path=~/.dotfiles/gitconfig
+    path=~/.dotfiles/.gitconfig
 ```
