@@ -15,7 +15,4 @@ alias vim="nvim"
 alias hist="history -$HISTSIZE"
 alias cb="xclip -selection clipboard"
 
-# Editor
-export EDITOR=vim
-export VISUAL=vim
 

@@ -14,6 +14,15 @@ cp -asi --remove-destination `pwd`/.^git ~
 ### Install Universal ctags ###
 https://github.com/universal-ctags/ctags
 
+### zsh dotfiles ###
+To load the zsh dotfiles, create a $HOME/.zshenv file that
+contains the following:
+
+```zsh
+ZDOTDIR=$HOME/.dotfiles/zsh
+source $ZDOTDIR/.zshenv
+```
+
 ### Git Config ###
 Instead of copying or symlinking the .gitconfig file to $HOME/.gitconfig,
 create a separate $HOME/.gitconfig that contains the following:
