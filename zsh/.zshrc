@@ -8,6 +8,9 @@
 # Alias tmux first before using zprezto plugin
 alias tmux="tmux -f ~/.dotfiles/.tmux.conf"
 
+# Add location to custom theme
+fpath=(${ZDOTDIR:-$HOME}/prompt ${fpath})
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

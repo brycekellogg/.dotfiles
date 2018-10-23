@@ -1,12 +1,19 @@
 ### Install zsh ###
+```
 sudo dnf install zsh
-apt install zsh
+sudo apt install zsh
 
 chsh -s /bin/zsh
 zsh
+```
 
-### Install Prezto ###
-https://github.com/sorin-ionescu/prezto
+### Clone dotfiles repo ###
+
+```
+cd ~
+git glone --recursive-submodules https://github.com/brycekellogg/.dotfiles.git
+```
+
 
 ### dircolors ###
 Create a symlink to the dircolors database
@@ -16,6 +23,7 @@ ln -s ~/.dotfiles/.dir_colors ~/.dir_colors
 
 ### Install Universal ctags ###
 https://github.com/universal-ctags/ctags
+
 
 ### zsh dotfiles ###
 To load the zsh dotfiles, create a $HOME/.zshenv file that
