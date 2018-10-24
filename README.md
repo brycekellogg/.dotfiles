@@ -11,9 +11,16 @@ zsh
 
 ```
 cd ~
-git glone --recursive-submodules https://github.com/brycekellogg/.dotfiles.git
+git glone https://github.com/brycekellogg/.dotfiles.git
+cd ~/.dotfiles/
+git submodule update --init --recursive
 ```
 
+### nvim ###
+```
+mkdir -p ~/.config/nvim/
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
+```
 
 ### dircolors ###
 Create a symlink to the dircolors database
