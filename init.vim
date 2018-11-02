@@ -77,6 +77,7 @@ set colorcolumn=80
 set expandtab
 set tabstop=4
 set shiftwidth=4
+let g:python_recommended_style=0  " override python tabstop
 
 " Set clipboard to system clipboard
 set clipboard+=unnamedplus
