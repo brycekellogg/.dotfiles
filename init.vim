@@ -37,6 +37,9 @@ endif
 " Highligh search term in ack.vim
 let g:ackhighlight = 1
 
+" Make NERDcommenter use // for C comments
+let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
+
 " Fix windows with NERDTree and ack.vim
 let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 
