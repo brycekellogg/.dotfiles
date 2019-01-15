@@ -22,6 +22,15 @@ mkdir -p ~/.config/nvim/
 ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 ```
 
+### youcompleteme ###
+https://valloric.github.io/YouCompleteMe/#linux-64-bit
+
+```
+cd ~/.local/share/nvim/plugged/youcompleteme/
+python3 install.py --clang-completer
+pip3 install --user neovim
+```
+
 ### dircolors ###
 Create a symlink to the dircolors database
 ```zsh
