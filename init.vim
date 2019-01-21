@@ -17,8 +17,8 @@ Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
-Plug 'jiangmiao/auto-pairs'
 Plug 'valloric/youcompleteme'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 
