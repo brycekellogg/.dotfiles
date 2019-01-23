@@ -17,9 +17,16 @@ Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
-Plug 'jiangmiao/auto-pairs'
 Plug 'valloric/youcompleteme'
 call plug#end()
+
+" YouCompleteMe Config
+"
+" Automatically close preview window (little window at bottom/top)
+" when we leave insert mode. YouCompleteMe uses the preview window
+" to show the documentation of the currently selected completion
+" when using symantic completion.
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 
 " Python Syntax Highlighting
