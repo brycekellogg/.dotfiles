@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
 Plug 'valloric/youcompleteme'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 " YouCompleteMe Config
