@@ -19,6 +19,7 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
 " Gutentags Config
