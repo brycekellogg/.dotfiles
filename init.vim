@@ -17,7 +17,7 @@ Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
-Plug 'valloric/youcompleteme', { 'do': './install.py' }
+Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
