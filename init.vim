@@ -21,6 +21,15 @@ Plug 'valloric/youcompleteme', { 'do': './install.py' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
+" Gutentags Config
+"
+" Disable gutentags for git commits and git rebase.
+" This solves a problem where gutentags was erroring
+" out when closing a git commit. Solution taken from:
+"
+" https://github.com/ludovicchabant/vim-gutentags/issues/168
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+
 " YouCompleteMe Config
 "
 " Automatically close preview window (little window at bottom/top)
