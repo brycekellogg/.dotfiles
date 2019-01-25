@@ -82,6 +82,14 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = " "
 
 " Vim/Tmux Integration Mappings
+"
+" Plugin vim-tmux-navigator allows navigating
+" vim splits and tmux panes seamlessly. These
+" settings map <ALT>+<Arrow Keys> to the
+" Navigation of these splits/panes.
+"
+" Additionally, disables moving out of vim when
+" a vim split is the maximized tmux pane.
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_disable_when_zoomed = 1
 nnoremap <silent> <M-Left>  :TmuxNavigateLeft<cr>
