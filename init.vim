@@ -75,6 +75,12 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
 " Fix windows with NERDTree and ack.vim
 let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 
+" NERTTree Config
+"
+" Automatically delete the buffers of
+" files deleted in NERDTree.
+let NERDTreeAutoDeleteBuffer = 1
+
 " Close vim if NERDTree is only thing left
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
