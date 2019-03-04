@@ -125,7 +125,7 @@ set mouse=a
 set nowrap
 set ruler
 set number
-set colorcolumn=80
+set colorcolumn=80,120
 
 " Set tab settings (always use 4 spaces)
 set expandtab
