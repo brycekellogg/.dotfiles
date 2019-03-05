@@ -11,7 +11,7 @@ zsh
 
 ```
 cd ~
-git glone https://github.com/brycekellogg/.dotfiles.git
+git clone https://github.com/brycekellogg/.dotfiles.git
 cd ~/.dotfiles/
 git submodule update --init --recursive
 ```
