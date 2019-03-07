@@ -22,4 +22,4 @@ alias hist="history -$HISTSIZE"
 alias cb="xclip -selection clipboard"
 alias open="xdg-open"
 alias ll='ls -ohX'
-
+alias sudo='sudo '
