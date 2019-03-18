@@ -58,3 +58,8 @@ create a separate $HOME/.gitconfig that contains the following:
 [include]
     path=~/.dotfiles/.gitconfig
 ```
+
+### SSH Config ###
+```zsh
+ln -s ~/.dotfiles/ssh-config ~/.ssh/config
+```
