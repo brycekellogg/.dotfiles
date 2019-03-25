@@ -69,13 +69,26 @@ endif
 " Highligh search term in ack.vim
 let g:ackhighlight = 1
 
-" Make NERDcommenter use // for C comments
+" NERDcommenter Config
+"
+" This plugin allows easy commenting of various
+" code blocks. It automatically chooses the correct
+" comment character for the current source file type.
+"
+" Make NERDcommenter use C++ style comments for C files
+" and remap <CTRL-/> to toggle comments on/off in all
+" of insert, normal, and visual modes.
 let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
+let g:NERDDefaultAlign = 'left'
+inoremap <C-_> <C-o>:call NERDComment(0,"toggle")<C-m>
+nnoremap <C-_> :call NERDComment(0,"toggle")<Enter>
+vnoremap <C-_> :call NERDComment(0,"toggle")<Enter>
+
 
 " Fix windows with NERDTree and ack.vim
 let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 
-" NERTTree Config
+" NERDTree Config
 "
 " Automatically delete the buffers of
 " files deleted in NERDTree.
