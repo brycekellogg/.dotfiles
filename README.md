@@ -16,12 +16,6 @@ cd ~/.dotfiles/
 git submodule update --init --recursive
 ```
 
-### nvim ###
-```
-mkdir -p ~/.config/nvim/
-ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
-```
-
 ### youcompleteme ###
 https://valloric.github.io/YouCompleteMe/#linux-64-bit
 

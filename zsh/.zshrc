@@ -20,7 +20,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias vim="nvim"
+alias vim="nvim -u ~/.dotfiles/init.vim"
 alias hist="history -$HISTSIZE"
 alias cb="xclip -selection clipboard"
 alias open="xdg-open"
