@@ -109,7 +109,7 @@ let NERDTreeMapOpenSplit='-'
 let NERDTreeMapOpenVSplit='<Bar>'
 
 " Have NERDTree ignore some files
-let NERDTreeIgnore=['\.map', '\.o$', '\~$', '\.git$', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc', '\.obj']
+let NERDTreeIgnore=['\.map', '\.o$', '\~$', '\.git$', '\.zhistory$', '\.zcompdump', '\.zcompcache$', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc', '\.obj']
 let NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = " "
 
