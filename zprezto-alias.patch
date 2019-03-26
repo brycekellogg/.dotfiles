@@ -1,0 +1,19 @@
+diff --git a/modules/utility/init.zsh b/modules/utility/init.zsh
+index 59a04f9..20f9dbe 100644
+--- a/modules/utility/init.zsh
++++ b/modules/utility/init.zsh
+@@ -66,10 +66,10 @@ alias mvi="${aliases[mv]:-mv} -i"
+ alias cpi="${aliases[cp]:-cp} -i"
+ alias lni="${aliases[ln]:-ln} -i"
+ if zstyle -T ':prezto:module:utility' safe-ops; then
+-  alias rm='rmi'
+-  alias mv='mvi'
+-  alias cp='cpi'
+-  alias ln='lni'
++  alias rm="$aliases[rmi]"
++  alias mv="$aliases[mvi]"
++  alias cp="$aliases[cpi]"
++  alias ln="$aliases[lni]"
+ fi
+ 
+ # ls

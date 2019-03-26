@@ -224,3 +224,4 @@ zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ':prezto:module:utility' correct 'no'
