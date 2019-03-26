@@ -15,7 +15,7 @@ rm -rf ctags
 # Dotfiles
 echo """
 ZDOTDIR=$HOME/.dotfiles/zsh
-source $ZDOTDIR/.zshenv
+source \$ZDOTDIR/.zshenv
 """ > $HOME/.zshenv
 
 # Git Config
