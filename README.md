@@ -11,15 +11,9 @@ zsh
 
 ```
 cd ~
-git glone https://github.com/brycekellogg/.dotfiles.git
+git clone https://github.com/brycekellogg/.dotfiles.git
 cd ~/.dotfiles/
 git submodule update --init --recursive
-```
-
-### nvim ###
-```
-mkdir -p ~/.config/nvim/
-ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 ```
 
 ### youcompleteme ###
@@ -57,4 +51,9 @@ create a separate $HOME/.gitconfig that contains the following:
 ```INI
 [include]
     path=~/.dotfiles/.gitconfig
+```
+
+### SSH Config ###
+```zsh
+ln -s ~/.dotfiles/ssh-config ~/.ssh/config
 ```

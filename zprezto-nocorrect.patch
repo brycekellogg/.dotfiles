@@ -1,0 +1,41 @@
+diff --git a/modules/utility/init.zsh b/modules/utility/init.zsh
+index 20f9dbe..ba54f97 100644
+--- a/modules/utility/init.zsh
++++ b/modules/utility/init.zsh
+@@ -20,20 +20,22 @@ fi
+ #
+ 
+ # Disable correction.
+-alias ack='nocorrect ack'
+-alias cd='nocorrect cd'
+-alias cp='nocorrect cp'
+-alias ebuild='nocorrect ebuild'
+-alias gcc='nocorrect gcc'
+-alias gist='nocorrect gist'
+-alias grep='nocorrect grep'
+-alias heroku='nocorrect heroku'
+-alias ln='nocorrect ln'
+-alias man='nocorrect man'
+-alias mkdir='nocorrect mkdir'
+-alias mv='nocorrect mv'
+-alias mysql='nocorrect mysql'
+-alias rm='nocorrect rm'
++if zstyle -T ':prezto:module:utility' correct; then
++  alias ack='nocorrect ack'
++  alias cd='nocorrect cd'
++  alias cp='nocorrect cp'
++  alias ebuild='nocorrect ebuild'
++  alias gcc='nocorrect gcc'
++  alias gist='nocorrect gist'
++  alias grep='nocorrect grep'
++  alias heroku='nocorrect heroku'
++  alias ln='nocorrect ln'
++  alias man='nocorrect man'
++  alias mkdir='nocorrect mkdir'
++  alias mv='nocorrect mv'
++  alias mysql='nocorrect mysql'
++  alias rm='nocorrect rm'
++fi
+ 
+ # Disable globbing.
+ alias bower='noglob bower'
