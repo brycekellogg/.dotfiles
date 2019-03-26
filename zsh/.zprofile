@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim -u ~/.dotfiles/init.vim'
+export VISUAL='nvim  -u ~/.dotfiles/init.vim'
 export PAGER='less'
 
 #
