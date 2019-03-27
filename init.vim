@@ -20,19 +20,19 @@ Plug 'vim-python/python-syntax'
 Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tyru/open-browser.vim'
+Plug 'bling/vim-bufferline'
 call plug#end()
 
-" Open Browser Config
-"
-" Plugin to open a URL or perform a
-" search using the default browser.
-" In normal mode, will open URL under
-" cursor on press of <F6>. In visual mode
-" will open URL if selected, or will search
-" for selected text if not a URL.
-nmap <F6> <Plug>(openbrowser-open)
-vmap <F6> <Plug>(openbrowser-smart-search) 
+" Bufferline
+let g:bufferline_echo = 0
+autocmd VimEnter *
+\ let &statusline='%{bufferline#refresh_status()}'
+  \ .bufferline#get_status_string()
+
+" Changing Buffers
+map <C-PageUp>   :bp<cr>
+map <C-PageDown> :bn<cr>
+
 
 " Gutentags Config
 "
