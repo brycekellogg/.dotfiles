@@ -21,6 +21,7 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
+Plug 'brycekellogg/vim-bbye'
 call plug#end()
 
 " Bufferline
@@ -32,6 +33,15 @@ autocmd VimEnter *
 " Changing Buffers
 map <C-PageUp>   :bp<cr>
 map <C-PageDown> :bn<cr>
+
+" Closing Buffers
+"
+" Remap :wq and :q to close buffers instead
+" of closing vim. If the buffer we want to
+" close is the last buffer, we then close vim.
+let bbye_closeOnLast = 1
+cnoreabbrev wq w<bar>Bdelete
+cnoreabbrev q Bdelete
 
 
 " Gutentags Config
