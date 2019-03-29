@@ -30,8 +30,8 @@ autocmd VimEnter *
   \ .bufferline#get_status_string()
 
 " Changing Buffers
-map <C-PageUp>   :bp<cr>
-map <C-PageDown> :bn<cr>
+map <silent> <C-PageUp>   :bp<cr>
+map <silent> <C-PageDown> :bn<cr>
 
 
 " Gutentags Config
@@ -80,9 +80,9 @@ let g:ackhighlight = 1
 " of insert, normal, and visual modes.
 let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
 let g:NERDDefaultAlign = 'left'
-inoremap <C-_> <C-o>:call NERDComment(0,"toggle")<C-m>
-nnoremap <C-_> :call NERDComment(0,"toggle")<Enter>
-vnoremap <C-_> :call NERDComment(0,"toggle")<Enter>
+inoremap <silent> <C-_> <C-o>:call NERDComment(0,"toggle")<C-m>
+nnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
+vnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
 
 
 " Fix windows with NERDTree and ack.vim
@@ -100,7 +100,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p | endif
 
 " Keyboard shortcut for NERDTree
-nnoremap <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
+nnoremap <silent> <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
 nnoremap - <NOP>
 nnoremap \| <NOP>
 let NERDTreeMapOpenSplit='-'
