@@ -21,7 +21,6 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
-Plug 'brycekellogg/vim-bbye'
 call plug#end()
 
 " Bufferline
@@ -33,15 +32,6 @@ autocmd VimEnter *
 " Changing Buffers
 map <C-PageUp>   :bp<cr>
 map <C-PageDown> :bn<cr>
-
-" Closing Buffers
-"
-" Remap :wq and :q to close buffers instead
-" of closing vim. If the buffer we want to
-" close is the last buffer, we then close vim.
-let bbye_closeOnLast = 1
-cnoreabbrev wq w<bar>Bdelete
-cnoreabbrev q Bdelete
 
 
 " Gutentags Config
@@ -104,8 +94,6 @@ let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 " files deleted in NERDTree.
 let NERDTreeAutoDeleteBuffer = 1
 
-" Close vim if NERDTree is only thing left
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Auto start NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -141,6 +129,11 @@ nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
 
 " Resize splits automatically
 autocmd VimResized * wincmd =
+
+" Allow us to have unsaved
+" hidden buffers.
+set hidden
+
 
 set mouse=a
 
