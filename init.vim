@@ -21,7 +21,12 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
+Plug 'qpkorr/vim-bufkill'
 call plug#end()
+
+" bufkill: kill buffers with <C-c>
+map <C-c> :BD<cr>
+map <C-x> :q<cr>
 
 " Bufferline
 let g:bufferline_echo = 0
@@ -94,6 +99,8 @@ let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
 " files deleted in NERDTree.
 let NERDTreeAutoDeleteBuffer = 1
 
+" Close NERDTree if it's the only thing left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Auto start NERDTree
 autocmd StdinReadPre * let s:std_in=1
