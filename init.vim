@@ -141,6 +141,14 @@ autocmd VimResized * wincmd =
 " hidden buffers.
 set hidden
 
+" Set cursor scrolling offset
+set scrolloff=10
+
+" Allow scrolling with ctrl-up/down
+map <C-Up>   <C-y>
+map <C-Down> <C-e>
+imap <C-Up>   <C-o><C-y>
+imap <C-Down> <C-o><C-e>
 
 set mouse=a
 
