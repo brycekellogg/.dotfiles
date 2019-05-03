@@ -101,8 +101,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p 
 
 " Keyboard shortcut for NERDTree
 nnoremap <silent> <Leader>f :NERDTreeToggle<Enter>:wincmd =<Enter>
-nnoremap - <NOP>
-nnoremap \| <NOP>
+nnoremap -  :split<cr>
+nnoremap \| :vsplit<cr>
 let NERDTreeMapOpenSplit='-'
 let NERDTreeMapOpenVSplit='<Bar>'
 
