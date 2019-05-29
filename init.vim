@@ -34,9 +34,9 @@ autocmd VimEnter *
 \ let &statusline='%{bufferline#refresh_status()}'
   \ .bufferline#get_status_string()
 
-" Changing Buffers
-map <silent> <C-PageUp>   :bp<cr>
-map <silent> <C-PageDown> :bn<cr>
+" Changing Buffers (but disable in NERDtree
+nnoremap <silent> <expr> <C-PageUp>   (expand('%') =~ 'NERD_tree' ? '' : ':bp<cr>')
+nnoremap <silent> <expr> <C-PageDown> (expand('%') =~ 'NERD_tree' ? '' : ':bn<cr>')
 
 
 " Gutentags Config
