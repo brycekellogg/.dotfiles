@@ -22,13 +22,40 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
 Plug 'qpkorr/vim-bufkill'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
+
+" Airline Configuration
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+let g:airline_section_b = '%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'
+let g:airline_section_y = ''
+let g:airline_section_x = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#wordcount#enabled = 0
+set noshowmode
+
+let g:airline#extensions#default#section_truncate_width = {
+  \ 'b': 95,
+  \ 'x': 95,
+  \ 'z': 95,
+  \ }
+
 " bufkill: kill buffers with <C-c>
-map <C-c> :BD<cr>
+"map <C-c> :BD<cr>
 map <C-x> :q<cr>
+nnoremap <silent> <expr> <C-c>   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
 
 " Bufferline
+let g:bufferline_rotate = 1
+let g:bufferline_fixed_index =  -1
 let g:bufferline_echo = 0
 autocmd VimEnter *
 \ let &statusline='%{bufferline#refresh_status()}'
@@ -88,7 +115,15 @@ let g:NERDDefaultAlign = 'left'
 inoremap <silent> <C-_> <C-o>:call NERDComment(0,"toggle")<C-m>
 nnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
 vnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
+let g:NERDTreeStatusline = -1 ""git>>" . trim(system('git rev-parse --abbrev-ref HEAD'))
 
+" NERDTree highlighting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+" Sort Order
+let g:NERDTreeSortOrder = ['\/$',  '\.vim$', '\.h$', '\.c$', '*', 'foobar']
 
 " Fix windows with NERDTree and ack.vim
 let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
@@ -116,7 +151,7 @@ let NERDTreeMapOpenVSplit='<Bar>'
 " Have NERDTree ignore some files
 let NERDTreeIgnore=['__pycache__', '\.map','\.o$', '\~$', '\.git$', '\.zhistory$', '\.zcompdump', '\.zcompcache$', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc', '\.obj']
 let NERDTreeMinimalUI = 1
-let g:NERDTreeStatusline = " "
+"let g:NERDTreeStatusline = " "
 
 " Vim/Tmux Integration Mappings
 "
@@ -182,3 +217,9 @@ syntax enable
 " Solarized Colors
 set background=dark
 colorscheme solarized
+
+" Fix for issue with NERDTree line highlighting with
+" NERDTree-syntax-highlighing installed. Solution from:
+"
+" https://github.com/neovim/neovim/issues/9019#issuecomment-439921147
+highlight NERDTreeFile ctermfg=14
