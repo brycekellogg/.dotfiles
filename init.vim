@@ -55,7 +55,7 @@ nnoremap <silent> <expr> <C-c>   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
 
 " Bufferline
 let g:bufferline_rotate = 1
-let g:bufferline_fixed_index =  -1
+let g:bufferline_fixed_index =  -2
 let g:bufferline_echo = 0
 autocmd VimEnter *
 \ let &statusline='%{bufferline#refresh_status()}'
@@ -223,3 +223,8 @@ colorscheme solarized
 "
 " https://github.com/neovim/neovim/issues/9019#issuecomment-439921147
 highlight NERDTreeFile ctermfg=14
+hi Normal ctermbg=none
+
+" Dimming inactive vim windows
+hi InactiveWindow ctermbg=black
+set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
