@@ -229,3 +229,6 @@ hi Normal ctermbg=none
 " Dimming inactive vim windows
 hi InactiveWindow ctermbg=black
 set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+
+" Cursor Line
+set cursorline
