@@ -89,6 +89,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:python_highlight_all = 1
 
 " GitGutter Config
+nmap g<PageUp>   <Plug>GitGutterPrevHunk
+nmap g<PageDown> <Plug>GitGutterNextHunk
 "set updatetime=100
 
 
