@@ -2,6 +2,8 @@
 
 # NeoVim
 pip3 install --user neovim
+# pip3 install numpydoc
+
 
 # Universal CTags
 git clone https://github.com/universal-ctags/ctags.git
@@ -26,3 +28,6 @@ ln -s ~/.dotfiles/ssh-config ~/.ssh/config
 
 # Dircolors
 ln -s ~/.dotfiles/.dir_colors ~/.dir_colors
+
+# Alacritty
+ln -s ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
