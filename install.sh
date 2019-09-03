@@ -31,3 +31,7 @@ ln -s ~/.dotfiles/.dir_colors ~/.dir_colors
 
 # Alacritty
 ln -s ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
+
+# Patched NERD Font
+mkdir ~/.fonts
+cd ~/.fonts && wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
