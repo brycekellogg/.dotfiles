@@ -7,6 +7,18 @@ chsh -s /bin/zsh
 zsh
 ```
 
+### Install Universal Ctags ###
+https://github.com/universal-ctags/ctags
+```
+sudo dnf copr enable thindil/universal-ctags
+sudo dnf install universal-ctags
+```
+
+### NeoVim ###
+```
+pip3 install --user neovim
+```
+
 ### Clone dotfiles repo ###
 
 ```
@@ -25,35 +37,8 @@ python3 install.py --clang-completer
 pip3 install --user neovim
 ```
 
-### dircolors ###
-Create a symlink to the dircolors database
-```zsh
-ln -s ~/.dotfiles/.dir_colors ~/.dir_colors
+### Patched NERD Font ###
 ```
-
-### Install Universal ctags ###
-https://github.com/universal-ctags/ctags
-
-
-### zsh dotfiles ###
-To load the zsh dotfiles, create a $HOME/.zshenv file that
-contains the following:
-
-```zsh
-ZDOTDIR=$HOME/.dotfiles/zsh
-source $ZDOTDIR/.zshenv
-```
-
-### Git Config ###
-Instead of copying or symlinking the .gitconfig file to $HOME/.gitconfig,
-create a separate $HOME/.gitconfig that contains the following:
-
-```INI
-[include]
-    path=~/.dotfiles/.gitconfig
-```
-
-### SSH Config ###
-```zsh
-ln -s ~/.dotfiles/ssh-config ~/.ssh/config
+mkdir ~/.fonts
+cd ~/.fonts && wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
 ```

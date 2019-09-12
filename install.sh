@@ -1,20 +1,6 @@
 #!/usr/bin/sh
 
-# NeoVim
-pip3 install --user neovim
-# pip3 install numpydoc
-
-
-# Universal CTags
-git clone https://github.com/universal-ctags/ctags.git
-cd ctags
-./autogen.sh
-./configure
-make
-sudo make install
-rm -rf ctags
-
-# Dotfiles
+# zsh
 echo """
 ZDOTDIR=$HOME/.dotfiles/zsh
 source \$ZDOTDIR/.zshenv
@@ -31,10 +17,6 @@ ln -s ~/.dotfiles/.dir_colors ~/.dir_colors
 
 # Alacritty
 ln -s ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
-
-# Patched NERD Font
-mkdir ~/.fonts
-cd ~/.fonts && wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
 
 # GPG Config
 ln -s ~/.dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
