@@ -8,8 +8,8 @@
 # Alias tmux first before using zprezto plugin
 alias tmux="tmux -f ~/.dotfiles/.tmux.conf"
 
-# Force gnome-keyring to not hijack ssh (must be before pezto)
-gnome-keyring-daemon --replace --daemonize --components=pkcs11,secrets,gpg &> /dev/null
+# Force gnome-keyring to not hijack ssh or gpg (must be before pezto)
+gnome-keyring-daemon --replace --daemonize --components=pkcs11,secrets &> /dev/null
 
 # Add location to custom theme
 fpath=(${ZDOTDIR:-$HOME}/prompt ${fpath})
