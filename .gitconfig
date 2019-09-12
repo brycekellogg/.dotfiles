@@ -2,6 +2,9 @@
 	name = Bryce Kellogg
 	signingkey = 2DD9A2294088D180
 
+[commit]
+	gpgsign = true
+
 [push]
     default = simple
 
