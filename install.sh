@@ -9,6 +9,9 @@ source \$ZDOTDIR/.zshenv
 # Git Config
 git config --global include.path ~/.dotfiles/.gitconfig
 
+# Tmux Config
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+
 # SSH Config
 ln -s ~/.dotfiles/ssh-config ~/.ssh/config
 
