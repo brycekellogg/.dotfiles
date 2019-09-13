@@ -28,6 +28,13 @@ cd ~/.dotfiles/
 git submodule update --init --recursive
 ```
 
+### GPG ###
+```
+sudo cp /usr/share/doc/gnupg2/examples/systemd-user/*.socket /usr/lib/systemd/user/
+sudo cp /usr/share/doc/gnupg2/examples/systemd-user/*.service /usr/lib/systemd/user/
+sudo systemctl --user --global enable gpg-agent-ssh.socket
+```
+
 ### youcompleteme ###
 https://valloric.github.io/YouCompleteMe/#linux-64-bit
 
