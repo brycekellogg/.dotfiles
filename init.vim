@@ -91,7 +91,7 @@ let g:python_highlight_all = 1
 " GitGutter Config
 nmap g<PageUp>   <Plug>GitGutterPrevHunk
 nmap g<PageDown> <Plug>GitGutterNextHunk
-set updatetime=100
+"set updatetime=100
 
 
 cnoreabbrev ack Ack!
