@@ -26,3 +26,23 @@ alias cb="xclip -selection clipboard"
 alias open="xdg-open"
 alias ll='ls -ohX'
 alias sudo='sudo '
+
+source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Zsh Autosuggestions
+source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=''
+
+# Zsh History Substring Search
+source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=magenta,fg=white,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white,bold'
+
+if [[ -n "$key_info" ]]; then
+  for keymap in 'emacs' 'viins'; do
+    bindkey -M "$keymap" "$key_info[Up]" history-substring-search-up
+    bindkey -M "$keymap" "$key_info[Down]" history-substring-search-down
+  done
+
+  unset keymap
+fi
