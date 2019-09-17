@@ -27,6 +27,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
+Plug 'dag/vim-fish'
 call plug#end()
 
 
