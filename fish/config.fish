@@ -4,6 +4,20 @@ set -x SSH_AUTH_SOCK /run/user/(id -u)/gnupg/S.gpg-agent.ssh
 alias vim='nvim'
 set -x VIMINIT source "~/.dotfiles/init.vim"
 
+# Tmux Titles
+function fish_title
+    if git rev-parse --git-dir > /dev/null ^ /dev/null
+        set -l gitdir (git rev-parse --git-dir)
+        if test $gitdir = ".git"
+            echo (basename (pwd))
+        else
+            echo (basename (dirname $gitdir))
+        end
+    else
+        echo (basename (pwd))
+    end
+end
+
 
 function fish_prompt --description 'Write out the prompt'
 
