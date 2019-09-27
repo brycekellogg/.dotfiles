@@ -1,8 +1,13 @@
 set -x SSH_AUTH_SOCK /run/user/(id -u)/gnupg/S.gpg-agent.ssh
 
-# Neovim Configuration
+# Aliases
 alias vim='nvim'
+alias cb='xclip -selection clipboard'
+
+# Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
+
+
 
 # Tmux Titles
 function fish_title
