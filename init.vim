@@ -13,7 +13,6 @@ Plug 'scrooloose/nerdtree',
 Plug 'Xuyuanp/nerdtree-git-plugin',
 Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
@@ -25,7 +24,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'dag/vim-fish'
 call plug#end()
@@ -90,8 +88,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:python_highlight_all = 1
 
 " GitGutter Config
-nmap g<PageUp>   <Plug>GitGutterPrevHunk
-nmap g<PageDown> <Plug>GitGutterNextHunk
+nmap g<PageUp>   <Plug>(GitGutterPrevHunk)
+nmap g<PageDown> <Plug>(GitGutterNextHunk)
 "set updatetime=100
 
 
@@ -119,7 +117,6 @@ let g:NERDDefaultAlign = 'left'
 inoremap <silent> <C-_> <C-o>:call NERDComment(0,"toggle")<C-m>
 nnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
 vnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
-let g:NERDTreeStatusline = -1 ""git>>" . trim(system('git rev-parse --abbrev-ref HEAD'))
 
 " NERDTree highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -155,7 +152,7 @@ let NERDTreeMapOpenVSplit='<Bar>'
 " Have NERDTree ignore some files
 let NERDTreeIgnore=['__pycache__', '\.map', '\.class$', '\.o$', '\~$', '\.git$', '\.zhistory$', '\.zcompdump', '\.zcompcache$', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc', '\.obj']
 let NERDTreeMinimalUI = 1
-"let g:NERDTreeStatusline = " "
+let g:NERDTreeStatusline = " "
 
 " Vim/Tmux Integration Mappings
 "
@@ -197,6 +194,14 @@ set ruler
 set number
 set colorcolumn=80,120
 
+" Disable showcmd
+"
+" When showcmd is set, commands are printed
+" in the bottom right. When scrolling, this
+" results in repeated prints of the scrolling
+" command. Disable this because it's disctracting.
+set noshowcmd
+
 " Set tab settings (always use 4 spaces)
 set expandtab
 set tabstop=4
@@ -217,6 +222,9 @@ nnoremap Q <nop>
 " Not Sure
 filetype plugin on
 syntax enable
+
+" Limit popup height
+set pumheight=10
 
 " Solarized Colors
 set background=dark
