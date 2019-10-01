@@ -3,6 +3,7 @@ set -x SSH_AUTH_SOCK /run/user/(id -u)/gnupg/S.gpg-agent.ssh
 # Aliases
 alias vim='nvim'
 alias cb='xclip -selection clipboard'
+alias ll='ls -l -G -X --group-directories-first'
 
 # Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
