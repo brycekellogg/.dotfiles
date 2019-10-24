@@ -154,6 +154,9 @@ let NERDTreeIgnore=['__pycache__', '\.map', '\.class$', '\.o$', '\~$', '\.git$',
 let NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = " "
 
+" Close NERDTree after selecting a file
+let NERDTreeQuitOnOpen=1
+
 " Vim/Tmux Integration Mappings
 "
 " Plugin vim-tmux-navigator allows navigating
