@@ -66,6 +66,7 @@ nnoremap <silent> <expr> <C-PageUp>   (expand('%') =~ 'NERD_tree' ? '' : ':bp<cr
 nnoremap <silent> <expr> <C-PageDown> (expand('%') =~ 'NERD_tree' ? '' : ':bn<cr>')
 
 
+
 " Gutentags Config
 "
 " Disable gutentags for git commits and git rebase.
@@ -92,8 +93,9 @@ nmap g<PageUp>   <Plug>(GitGutterPrevHunk)
 nmap g<PageDown> <Plug>(GitGutterNextHunk)
 "set updatetime=100
 
-
-cnoreabbrev ack Ack!
+" Remap question mark to search for a word
+" using Ack (ag) in all files under cwd
+nnoremap ? :Ack! <cword><cr>
 
 " Set ag as seach program
 if executable('ag')
