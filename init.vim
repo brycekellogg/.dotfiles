@@ -9,21 +9,21 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'micha/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'scrooloose/nerdtree',
-Plug 'Xuyuanp/nerdtree-git-plugin',
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
-Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
+Plug 'valloric/youcompleteme', {'for': ['c', 'c++', 'python'], 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'kien/ctrlp.vim'
 Plug 'dag/vim-fish'
 call plug#end()
