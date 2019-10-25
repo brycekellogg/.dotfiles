@@ -9,20 +9,20 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'micha/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'scrooloose/nerdtree',
-Plug 'Xuyuanp/nerdtree-git-plugin',
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
-Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
+Plug 'valloric/youcompleteme', {'for': ['c', 'c++', 'python'], 'do': './install.py --clang-completer' }
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
@@ -65,6 +65,7 @@ nnoremap <silent> <expr> <C-PageUp>   (expand('%') =~ 'NERD_tree' ? '' : ':bp<cr
 nnoremap <silent> <expr> <C-PageDown> (expand('%') =~ 'NERD_tree' ? '' : ':bn<cr>')
 
 
+
 " Gutentags Config
 "
 " Disable gutentags for git commits and git rebase.
@@ -91,8 +92,9 @@ nmap g<PageUp>   <Plug>(GitGutterPrevHunk)
 nmap g<PageDown> <Plug>(GitGutterNextHunk)
 "set updatetime=100
 
-
-cnoreabbrev ack Ack!
+" Remap question mark to search for a word
+" using Ack (ag) in all files under cwd
+nnoremap ? :Ack! <cword><cr>
 
 " Set ag as seach program
 if executable('ag')
@@ -152,6 +154,9 @@ let NERDTreeMapOpenVSplit='<Bar>'
 let NERDTreeIgnore=['__pycache__', '\.map', '\.class$', '\.o$', '\~$', '\.git$', '\.zhistory$', '\.zcompdump', '\.zcompcache$', 'tags', '\.aux', '\.blg', '\.fdb_latexmk', '\.fls', '\.log', '\.out', '\.toc', '\.obj']
 let NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = " "
+
+" Close NERDTree after selecting a file
+let NERDTreeQuitOnOpen=1
 
 " Vim/Tmux Integration Mappings
 "
