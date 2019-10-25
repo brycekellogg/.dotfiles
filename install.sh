@@ -1,11 +1,5 @@
 #!/usr/bin/sh
 
-# zsh
-echo """
-ZDOTDIR=$HOME/.dotfiles/zsh
-source \$ZDOTDIR/.zshenv
-""" > $HOME/.zshenv
-
 # Git Config
 git config --global include.path ~/.dotfiles/.gitconfig
 
