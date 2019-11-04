@@ -25,6 +25,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 
