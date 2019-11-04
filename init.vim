@@ -18,14 +18,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
 Plug 'valloric/youcompleteme', {'for': ['c', 'c++', 'python'], 'do': './install.py --clang-completer' }
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'bling/vim-bufferline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
-Plug 'dag/vim-fish'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 
