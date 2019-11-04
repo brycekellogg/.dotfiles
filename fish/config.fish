@@ -7,7 +7,7 @@ alias ll='ls -l -G -X -h --group-directories-first'
 
 # Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
-
+set -x EDITOR nvim
 
 
 # Tmux Titles
