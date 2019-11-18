@@ -125,7 +125,7 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Sort Order
-let g:NERDTreeSortOrder = ['\/$',  '\.vim$', '\.h$', '\.c$', '*', 'foobar']
+let g:NERDTreeSortOrder = ['\/$',  '\.vim$', '\.h$', '\.c$', '\.cpp$', '*']
 
 " Fix windows with NERDTree and ack.vim
 let g:ack_mappings = {'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p'}
@@ -222,6 +222,7 @@ set splitright
 " Unmap annoying q issues
 nnoremap q: <nop>
 nnoremap Q <nop>
+
 
 " Not Sure
 filetype plugin on
