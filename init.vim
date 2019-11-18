@@ -25,6 +25,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 
@@ -49,8 +52,8 @@ let g:airline#extensions#default#section_truncate_width = {
 
 " bufkill: kill buffers with <C-c>
 "map <C-c> :BD<cr>
-map <C-x> :q<cr>
-nnoremap <silent> <expr> <C-c>   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
+nnoremap <Leader>x :q<cr>
+nnoremap <silent> <expr> <Leader>c   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
 
 " Bufferline
 let g:bufferline_rotate = 1
@@ -115,6 +118,7 @@ let g:ackhighlight = 1
 " of insert, normal, and visual modes.
 let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
 let g:NERDDefaultAlign = 'left'
+let g:NERDCreateDefaultMappings = 0
 inoremap <silent> <C-_> <C-o>:call NERDComment(0,"toggle")<C-m>
 nnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>
 vnoremap <silent> <C-_> :call NERDComment(0,"toggle")<Enter>

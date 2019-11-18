@@ -1,5 +1,7 @@
 set -x SSH_AUTH_SOCK /run/user/(id -u)/gnupg/S.gpg-agent.ssh
 
+set -x PATH ~/.local/bin/ $PATH
+
 # Aliases
 alias vim='nvim'
 alias cb='xclip -selection clipboard'
@@ -7,7 +9,7 @@ alias ll='ls -l -G -X -h --group-directories-first'
 
 # Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
-
+set -x EDITOR nvim
 
 
 # Tmux Titles
