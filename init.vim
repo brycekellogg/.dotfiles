@@ -52,7 +52,7 @@ let g:airline#extensions#default#section_truncate_width = {
 
 " bufkill: kill buffers with <C-c>
 "map <C-c> :BD<cr>
-nnoremap <Leader>x :q<cr>
+nnoremap <Leader>x :close<cr>
 nnoremap <silent> <expr> <Leader>c   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
 
 " Bufferline
