@@ -50,9 +50,13 @@ let g:airline#extensions#default#section_truncate_width = {
   \ 'z': 95,
   \ }
 
-" bufkill: kill buffers with <C-c>
-"map <C-c> :BD<cr>
-nnoremap <Leader>x :close<cr>
+" Killing Buffers & Windows
+"
+" Use <Leader>c for killing buffers and <Leader>x for killing
+" windows. When killing windows, never close last window of close
+" window so only NERDTree is left. When closing buffers, don't close
+" the NERDTree buffer.
+nnoremap <silent> <expr> <Leader>x   (winnr("$")==2 && bufwinnr("NERD_tree")!=-1 && expand('%')!~'NERD_tree' ? '' : ':close<cr>')
 nnoremap <silent> <expr> <Leader>c   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
 
 " Bufferline
