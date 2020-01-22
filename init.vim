@@ -56,8 +56,10 @@ let g:airline#extensions#default#section_truncate_width = {
 " windows. When killing windows, never close last window of close
 " window so only NERDTree is left. When closing buffers, don't close
 " the NERDTree buffer.
+"
+" TODO: Buffer kill ignore = [NERD_tree, quickfix, help, tagbar]
 nnoremap <silent> <expr> <Leader>x   (winnr("$")==2 && bufwinnr("NERD_tree")!=-1 && expand('%')!~'NERD_tree' ? '' : ':close<cr>')
-nnoremap <silent> <expr> <Leader>c   (expand('%') =~ 'NERD_tree' ? '' : ':BD<cr>')
+nnoremap <silent> <expr> <Leader>c   ((expand('%') =~ 'NERD_tree') \|\| (getwininfo(win_getid())[0]['quickfix']) ? '' : ':BD<cr>')
 
 " Bufferline
 let g:bufferline_rotate = 1
