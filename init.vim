@@ -28,6 +28,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 
 
