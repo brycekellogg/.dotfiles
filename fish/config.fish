@@ -7,6 +7,21 @@ alias vim='nvim'
 alias cb='xclip -selection clipboard'
 alias ll='ls -l -G -X -h --group-directories-first'
 
+# Ignoring Key Combinations
+bind \e\[6\;5~ ''  # CTRL-PAGEDOWN
+bind \e\[5\;5~ ''  # CTRL-PAGEUP
+bind \e\[1\;3F ''  # ALT-END
+bind \e\[1\;3H ''  # ALT-HOME
+bind \e\[1\;5F ''  # CTRL-END
+bind \e\[1\;5H ''  # CTRL-HOME
+bind \e\[3\;5~ ''  # CTRL-DEL
+bind \e\[2\;5~ ''  # CTRL-INS
+bind \e\[3\;3~ ''  # ALT-DEL
+bind \e\[2\;3~ ''  # ALT-INS
+bind \e\[1\;5A ''  # CTRL-UP
+bind \e\[1\;5B ''  # CTRL-DOWN
+
+
 # Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
 set -x EDITOR nvim
