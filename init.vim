@@ -8,7 +8,7 @@ endif
 " Choose Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'micha/vim-colors-solarized'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'heewa/vim-tmux-navigator', {'branch': 'add-no-wrap-option'}
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -180,6 +180,7 @@ let NERDTreeQuitOnOpen=1
 " a vim split is the maximized tmux pane.
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_disable_when_zoomed = 1
+let g:tmux_navigator_no_wrap = 1
 nnoremap <silent> <M-Left>  :TmuxNavigateLeft<cr>
 nnoremap <silent> <M-Down>  :TmuxNavigateDown<cr>
 nnoremap <silent> <M-Up>    :TmuxNavigateUp<cr>
