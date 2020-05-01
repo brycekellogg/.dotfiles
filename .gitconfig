@@ -11,6 +11,10 @@
 [core]
     excludesfile = ~/.dotfiles/.gitignore
     editor = nvim -u ~/.dotfiles/init.vim
+    pager = nvim -R
+
+[color]
+	pager = no
 
 [merge]
     tool = vimdiff

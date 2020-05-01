@@ -25,7 +25,7 @@ bind \e\[1\;5B ''  # CTRL-DOWN
 # Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
 set -x EDITOR nvim
-
+set -x PAGER "nvim -c 'set ft=man' -"
 
 # Tmux Titles
 function fish_title
