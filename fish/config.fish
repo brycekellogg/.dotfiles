@@ -20,6 +20,7 @@ bind \e\[3\;3~ ''  # ALT-DEL
 bind \e\[2\;3~ ''  # ALT-INS
 bind \e\[1\;5A ''  # CTRL-UP
 bind \e\[1\;5B ''  # CTRL-DOWN
+bind \e\[2~ ''     # INSERT
 
 
 # Neovim Configuration
