@@ -1,4 +1,2 @@
 tags
-zsh/.zcompcache/
-zsh/.zcompdump*
-zsh/.zhistory
+fish/conf.d/
