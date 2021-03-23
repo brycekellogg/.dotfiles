@@ -197,18 +197,35 @@ set hidden
 set scrolloff=10
 
 " Allow scrolling with ctrl-up/down
+"
+" This lets us use ctrl-up/down to scroll
+" just the buffer view while keeping the cursor
+" located at where it was.
 map <C-Up>   <C-y>
 map <C-Down> <C-e>
 imap <C-Up>   <C-o><C-y>
 imap <C-Down> <C-o><C-e>
 
+" Mouse Configuration
+"
+" I want to enable mouse usage, in all modes, but right
+" click should be passed through to tmux. This is because
+" tmux right click behavior is more useful.
 set mouse=a
 
 " Visual Changes
-set nowrap
 set ruler
 set number
 set colorcolumn=80,120
+
+
+" Disable line wrapping
+"
+" By default vim will wrap a line when it gets too long
+" to fit in the current window size. I hate line wrapping
+" and would rather it just gets cut off. This does that.
+set nowrap
+
 
 " Disable showcmd
 "
@@ -252,11 +269,21 @@ colorscheme solarized
 "
 " https://github.com/neovim/neovim/issues/9019#issuecomment-439921147
 highlight NERDTreeFile ctermfg=14
-hi Normal ctermbg=none
+
 
 " Dimming inactive vim windows
-hi InactiveWindow ctermbg=black
+"
+" When a windows is not active, it should become the same
+" background color as an inactive tmux pane. We do this via
+" the highlight and winghighlight functionality.
+highlight Normal ctermbg=none
+highlight InactiveWindow ctermbg=black
 set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
-" Cursor Line
+
+" Enable cursor line
+"
+" This option creates a slightly lighter background line
+" for the line the cursor is on. It really helps with
+" easily visually identifying the current cursor line.
 set cursorline
