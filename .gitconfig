@@ -7,7 +7,7 @@
 [core]
     excludesfile = ~/.dotfiles/.gitignore
     editor = nvim -u ~/.dotfiles/init.vim
-    pager = nvim -R
+    pager  = nvim -u ~/.dotfiles/pager.vim -R -
 
 [color]
 	pager = no

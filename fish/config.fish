@@ -6,6 +6,7 @@ set -x PATH ~/.local/bin/ ~/bin/ $PATH
 alias vim='nvim'
 alias cb='xclip -selection clipboard'
 alias ll='ls -l -G -X -h --group-directories-first'
+alias man='man -P "nvim --startuptime man.log -u ~/.dotfiles/pager.vim -R -c \'set ft=man\' -"'
 
 # Ignoring Key Combinations
 bind \e\[6\;5~ ''  # CTRL-PAGEDOWN
@@ -26,7 +27,7 @@ bind \e\[2~ ''     # INSERT
 # Neovim Configuration
 set -x VIMINIT source "~/.dotfiles/init.vim"
 set -x EDITOR nvim
-set -x PAGER "nvim -c 'set ft=man' -"
+set -x PAGER "nvim -u ~/.dotfiles/pager.vim -R -"
 
 # Tmux Titles
 function fish_title
