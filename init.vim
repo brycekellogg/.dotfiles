@@ -186,10 +186,6 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 " Sort Order
 let g:NERDTreeSortOrder = ['\/$',  '\.vim$', '\.h$', '\.c$', '\.cpp$', '*']
 
-
-" Close NERDTree if it's the only thing left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Auto start NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in")  | NERDTree | wincmd p | endif
@@ -297,7 +293,7 @@ nnoremap <silent> <expr> <Leader>c  ":call KillBuffer()<cr>"
 " Use <Leader>x for killing windows. When killing windows, never close
 " last window and (or only content window if nerdtree or help is open)
 function! KillWindow()
-    let ignoreFileTypes = ["nerdtree", "help"]
+    let ignoreFileTypes = ["nerdtree", "help", "quickfix"]
 
     let count = 0
     for windowNumber in range(1, winnr('$'))
@@ -316,6 +312,27 @@ function! KillWindow()
     execute "close"
 endfunction
 nnoremap <silent> <expr> <Leader>x  ":call KillWindow()<cr>"
+
+" Exit vim if the only remaining open windows are the given file
+" types. This allows us to exit without manually closing NERDTree
+" or help or the quickfix (search results).
+function! CheckClose()
+    let closeFileTypes = ["nerdtree", "help", "qf"]
+    let closeBuffTypes = []
+
+    for windowNumber in range(1, winnr('$'))
+        let bufferNumber = winbufnr(windowNumber)
+        let fileType = getbufvar(bufferNumber, '&filetype')
+        let buffType = getbufvar(bufferNumber, '&buftype')
+        if index(closeFileTypes, fileType) < 0 && index(closeBuffTypes, buffType) < 0
+            return
+        endif
+    endfor
+
+    execute "qa"
+endfunction
+autocmd bufenter * call CheckClose()
+
 
 " Resize splits automatically
 autocmd VimResized * wincmd =
