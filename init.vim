@@ -154,6 +154,14 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+
+" Fix C indentation for switch
+"
+" The default indent action for switch statements
+" in C makes me want to gouge out my eyeballs.
+set cinoptions=l1
+
+
 " Override python tabstop
 "
 " Python recommends a bad number of spaces for
@@ -422,9 +430,10 @@ let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 
 
-let g:airline_section_b = '%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'
+let g:airline_section_b = '%{airline#extensions#branch#get_head()}'
 let g:airline_section_y = ''
 let g:airline_section_x = ''
+let g:airline_section_z = '%p%% %#__accent_bold#%{g:airline_symbols.linenr}:%l/%L%#__restore__#'
 
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
