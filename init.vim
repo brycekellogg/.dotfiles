@@ -192,7 +192,7 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Sort Order
-let g:NERDTreeSortOrder = ['\/$',  '\.vim$', '\.h$', '\.c$', '\.cpp$', '*']
+let g:NERDTreeSortOrder = ['CMakeLists.txt', '\.cmake',  '\.vim$', '\.h$', '\.c$', '\.cpp$', '*', '\/$']
 
 " Auto start NERDTree
 autocmd StdinReadPre * let s:std_in=1
