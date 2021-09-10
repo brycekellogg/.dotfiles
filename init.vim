@@ -192,7 +192,7 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Sort Order
-let g:NERDTreeSortOrder = ['\/$',  '\.vim$', '\.h$', '\.c$', '\.cpp$', '*']
+let g:NERDTreeSortOrder = ['\/$',  '\.yaml$', '\.vim$', '\.h$', '\.c$', '\.cpp$', '*']
 
 " Auto start NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -433,7 +433,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_b = '%{airline#extensions#branch#get_head()}'
 let g:airline_section_y = ''
 let g:airline_section_x = ''
-let g:airline_section_z = '%p%% %#__accent_bold#%{g:airline_symbols.linenr}:%l/%L%#__restore__#'
+let g:airline_section_z = '%p%% %#__accent_bold#%{g:airline_symbols.linenr} %l/%L%#__restore__#'
 
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
