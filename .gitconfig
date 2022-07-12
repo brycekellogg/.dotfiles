@@ -27,3 +27,6 @@
     trustExitCode = true
 [difftool "vimdiff"]
     cmd = nvim -d $LOCAL $REMOTE
+
+[tag]
+	sort = version:refname
